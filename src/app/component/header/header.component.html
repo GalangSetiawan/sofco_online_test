@@ -1,0 +1,32 @@
+
+
+<nav class="navbar navbar-expand-lg navbar-light">
+    <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+       
+        <li class="nav-item mr-5">
+          <a class="nav-link" skipLocationChange [routerLink]="['/home']" > <span uk-icon="icon: home"></span> <span class="uk-margin-small-left">Home</span></a>
+        </li>
+        <li class="nav-item mr-5">
+            <a class="nav-link" skipLocationChange [routerLink]="['/catalog']"><span uk-icon="icon: tag"></span> <span class="uk-margin-small-left">Catalog</span></a>
+        </li>
+        <li class="nav-item mr-5">
+            <a class="nav-link" skipLocationChange [routerLink]="['/shoplist']"> <span uk-icon="icon: cart"></span> <span class="uk-badge">1</span></a>
+
+        </li>
+
+        
+
+        
+      </ul>
+      <div class="form-inline my-2 my-lg-0">
+        <span uk-icon="icon: search"></span>
+      </div>
+    </div>
+  </nav>
+  
