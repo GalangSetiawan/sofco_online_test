@@ -3,7 +3,6 @@
 aplikasi ini ditujukan untuk menyelesaikan online test yang di berikan oleh PT. Sofco Graha pada tahapan seleksi masuk ke perusahaan
 
 how to run program
-=====[ running in local development ]======
 1. clone repositories
 2. checkout into branch *master*
 4. in directory project run script *npm install*
