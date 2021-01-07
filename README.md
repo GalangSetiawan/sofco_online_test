@@ -4,10 +4,10 @@ aplikasi ini ditujukan untuk menyelesaikan online test yang di berikan oleh PT. 
 
 how to run program
 1. clone repositories
-2. checkout into branch *master*
-4. in directory project run script *npm install*
-5. after finish install all module in step 4, run website with *ng serve*
-6. access *localhost:4200/* on your browser
+2. checkout into branch `master`
+4. in directory project run script `npm install`
+5. after finish install all module in step 4, run website with `ng serve`
+6. access `http://localhost:4200/` on your browser
 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.29.
