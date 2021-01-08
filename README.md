@@ -9,7 +9,7 @@ how to run program
 5. after finish install all module in step 4, run website with `ng serve`
 6. access `http://localhost:4200/` on your browser
 
-or, you can access in
+or, you can access at
 `http://sofco-test.kenangncode.com/`
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.29.
