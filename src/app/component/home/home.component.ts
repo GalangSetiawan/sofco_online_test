@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { BookstoreService } from '../../service/bookstore.service'
+import * as _ from "lodash";
+import * as $ from 'jquery'
+declare var UIkit: any;
+
 
 @Component({
   selector: 'app-home',
@@ -6,10 +11,33 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  title = "home";
+  masterBook:any = [];
 
-  constructor() { }
+  constructor(private bookSvc:BookstoreService) {}
 
   ngOnInit() {
+    this.masterBook = this.bookSvc.getDataSearch();
+    this.selectActiveMenu(this.title);
+
+  }
+
+  selectActiveMenu(opened){
+    this.removeActiveMenu();
+    if(opened == 'catalog'){
+      $('#listMenu #titleCatalog').addClass('customColorNav');
+    }else if(opened == 'home'){
+      $('#listMenu #titleHome').addClass('customColorNav');
+    }else if(opened == 'shoplist'){
+      $('#listMenu #titleShoplist').addClass('customColorNav');
+    }
+  }
+
+
+  removeActiveMenu(){
+    $('#listMenu #titleHome').removeClass('customColorNav');
+    $('#listMenu #titleCatalog').removeClass('customColorNav');
+    $('#listMenu #titleShoplist').removeClass('customColorNav');
   }
 
 
