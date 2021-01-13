@@ -1,32 +1,157 @@
 
 
-<nav class="navbar navbar-expand-lg navbar-light">
+<nav class="navbar navbar-expand-lg navbar-light" style="zoom: 0.9;">
     <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+    <!-- <a class="uk-navbar-item uk-logo oleoFont storeNameHeading" skipLocationChange [routerLink]="['/']">Book Store <span >.</span></a> -->
+
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
   
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
+      <ul class="navbar-nav mr-auto" id="listMenu">
        
-        <li class="nav-item mr-5">
-          <a class="nav-link" skipLocationChange [routerLink]="['/home']" > <span uk-icon="icon: home"></span> <span class="uk-margin-small-left">Home</span></a>
-        </li>
-        <li class="nav-item mr-5">
-            <a class="nav-link" skipLocationChange [routerLink]="['/catalog']"><span uk-icon="icon: tag"></span> <span class="uk-margin-small-left">Catalog</span></a>
-        </li>
-        <li class="nav-item mr-5">
-            <a class="nav-link" skipLocationChange [routerLink]="['/shoplist']"> <span uk-icon="icon: cart"></span> <span class="uk-badge">1</span></a>
 
+
+        <li class="nav-item mr-4">
+          <a class="nav-link ralewayFont"  skipLocationChange [routerLink]="['/']" > 
+            <span uk-icon="icon: home" skipLocationChange [routerLink]="['/']"></span> 
+            <span class="uk-margin-small-left" id="titleHome">Home</span>
+          </a>
         </li>
 
-        
 
-        
+        <li class="nav-item mr-4">
+            <a class="nav-link ralewayFont" skipLocationChange [routerLink]="['/catalog']">
+              <span uk-icon="icon: tag" skipLocationChange [routerLink]="['/catalog']"  ></span> 
+              <span class="uk-margin-small-left" id="titleCatalog" >Catalog</span>
+            </a>
+        </li>
+       
       </ul>
+    </div>
+
+
+
+
+    <div>
       <div class="form-inline my-2 my-lg-0">
-        <span uk-icon="icon: search"></span>
+        <a uk-icon="icon: info" uk-toggle href="#aboutModal"></a>
+        <a uk-icon="icon: heart" class="ml-4" uk-tooltip="title: hanya desain, tidak dengan fungsinya; pos: bottom"></a>
+        <a class="mr-2 ml-3 customColor" id="titleShoplist" skipLocationChange [routerLink]="['/shoplist']" style="text-decoration: none;"> 
+          <span uk-icon="icon: cart"></span> 
+          <span class="uk-badge" style="background-color:#ff701c;">{{dataCart.length}}</span>
+        </a>
       </div>
     </div>
-  </nav>
+    
+
+    
+</nav>
+
+
   
+<!-- <nav class="uk-navbar-container" uk-navbar>
+
+  <div class="uk-navbar-left">
+
+      <ul class="uk-navbar-nav">
+        <li class="uk-active"><a><span uk-icon="icon: home" skipLocationChange id="titleHome"    [routerLink]="['/']"></span></a></li>
+        <li class="uk-active"><a><span uk-icon="icon: tag"  skipLocationChange id="titleCatalog" [routerLink]="['/catalog']"></span></a></li>
+      </ul>
+
+  </div>
+
+  <div class="uk-navbar-right">
+
+      <ul class="uk-navbar-nav">
+          <li class="uk-active"><a uk-icon="icon: info" uk-toggle href="#aboutModal"></a></li>
+          <li><a uk-icon="icon: heart" class="" uk-tooltip="title: hanya desain, tidak dengan fungsinya; pos: bottom"></a></li>
+          <li><a class="customColor" id="titleShoplist" skipLocationChange [routerLink]="['/shoplist']" style="text-decoration: none;"> 
+            <span uk-icon="icon: cart"></span> 
+            <span class="uk-badge" style="background-color:#ff701c;">{{dataCart.length}}</span>
+          </a>
+        </li>
+      </ul>
+
+  </div>
+
+</nav> -->
+
+
+
+<!-- This is the modal -->
+<div id="aboutModal" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body">
+        <h2 class="uk-modal-title">Sofco Recruitment Test</h2>
+
+        build with library & framework 
+       
+        <table class="uk-table uk-table-small uk-table-divider">
+          
+          <tbody>
+
+            <tr>
+              <td>
+                <img src="https://angular.io/assets/images/logos/angular/angular.png" width="20" alt="">
+              </td>
+              <td>Angular 8</td>
+              <td><a href="https://angular.io/docs">https://angular.io/</a></td>
+            </tr>
+
+            <tr>
+              <td>
+                <img src="https://cdn.iconscout.com/icon/free/png-512/uikit-285322.png" width="20" alt="">
+              </td>
+              <td>UI Kit</td>
+              <td><a href="https://getuikit.com/">https://getuikit.com/</a></td>
+            </tr>
+
+
+            <tr>
+              <td >
+                <img src="https://getbootstrap.com/docs/5.0/assets/brand/bootstrap-social-logo.png" width="20" alt="">
+              </td>
+              <td>Bootstrap</td>
+              <td><a href="https://getbootstrap.com/">https://getbootstrap.com/</a></td>
+            </tr>
+        
+            <!-- <tr>
+              <td>
+                <img src="https://www.drupal.org/files/project-images/font_awesome_logo.png" width="20" alt="">
+              </td>
+              <td>Fontawesome</td>
+              <td><a href="https://fontawesome.com/v4.7.0/icons/">https://fontawesome.com/v4.7.0/icons/</a></td>
+            </tr> -->
+        
+            
+            
+            <tr>
+              <td>
+                <img src="https://www.pikpng.com/pngl/m/440-4404136_jquery-jquery-logo-transparent-background-clipart.png" width="20" alt="">
+              </td>
+              <td>jQuery</td>
+              <td><a href="https://jquery.com/">https://jquery.com/</a></td>
+            </tr>
+          
+        
+            <tr>
+              <td>
+                <img src="https://i.pinimg.com/originals/5c/a1/dc/5ca1dc984117b0bb5e647ffea7fe6b0d.png" width="20" alt="">
+              </td>
+              <td>Lodash</td>
+              <td><a href="https://lodash.com/">https://lodash.com/</a></td>
+            </tr>
+        
+            
+        
+            
+          </tbody>
+      </table>
+
+        <p class="uk-text-right">
+            <button class="uk-button uk-button-default uk-modal-close roundedBorder-sx" type="button">Cancel</button> &nbsp;
+            <button class="uk-button uk-button-primary roundedBorder-sx" type="button">Save</button>
+        </p>
+    </div>
+</div>
