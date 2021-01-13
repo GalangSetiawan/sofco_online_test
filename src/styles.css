@@ -1,1 +1,83 @@
 /* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+.roundedBorder-sx{
+    border-radius:10px !important;
+}
+
+.roundedBorder-sm{
+    border-radius:15px !important;
+}
+
+.roundedBorder-md{
+    border-radius:25px !important;
+}
+
+.roundedBorder-lg{
+    border-radius:30px !important;
+}
+
+.roundedBorder-xl{
+    border-radius:35px !important;
+}
+
+.gsShadow{
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.uk-dotnav>*>* {
+	width: 50px !important;
+	border-radius: 0% !important;
+	border: 1px solid rgba(102, 102, 102, 0) !important;
+
+}
+
+body{
+    background-position-x: #F7F7F7;
+}
+
+.uk-dotnav>*>:focus, .uk-dotnav>*>:hover {
+    background-color:#ff701c !important;
+    outline: 0;
+    border-color: transparent;
+}
+.uk-dotnav>*>:active {
+    background-color: rgba(102, 102, 102, .2);
+    border-color: transparent;
+}
+.uk-dotnav>.uk-active>* {
+    background-color:#ff701c !important;
+    border-color: transparent;
+}
+
+.customColorBackground{
+    background-color:#ff701c !important;
+}
+
+.customColor{
+    color:#ff701c !important;
+}
+
+
+.customColorNav{
+    color:#ff701c !important;
+}
+
+.uk-button-primary {
+    background-color: #FF7A26 !important;
+    color: #fff;
+    border: 1px solid transparent;
+}
+.uk-button-primary:focus, .uk-button-primary:hover {
+    background-color: #ff701c !important;
+    color: #fff;
+}
+.uk-button-primary.uk-active, .uk-button-primary:active {
+    background-color: #F0610D !important;
+    color: #fff;
+}
+.uk-button-danger:disabled, .uk-button-default:disabled, .uk-button-primary:disabled, .uk-button-secondary:disabled {
+    background-color: transparent !important;
+    color: #999;
+    border-color: #e5e5e5;
+}
+
