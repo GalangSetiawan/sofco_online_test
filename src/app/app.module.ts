@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -7,7 +9,7 @@ import { HomeComponent } from './component/home/home.component';
 import { CatalogComponent } from './component/catalog/catalog.component';
 import { ShoplistComponent } from './component/shoplist/shoplist.component';
 import { HeaderComponent } from './component/header/header.component';
-import { FooterComponent } from './component/footer/footer.component';
+import { DetailbookComponent } from './component/detailbook/detailbook.component';
 
 @NgModule({
   declarations: [
@@ -16,10 +18,11 @@ import { FooterComponent } from './component/footer/footer.component';
     CatalogComponent,
     ShoplistComponent,
     HeaderComponent,
-    FooterComponent
+    DetailbookComponent,
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule
   ],
   providers: [],
