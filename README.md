@@ -6,8 +6,9 @@ how to run program
 1. clone repositories
 2. checkout into branch `master`
 4. in directory project run script `npm install`
-5. after finish install all module in step 4, run website with `ng serve`
-6. access `http://localhost:4200/` on your browser
+5. install angular with spesific version `npm install -g @angular/cli@8.3.29`
+6. after finish install all module in step 4, run website with `ng serve`
+7. access `http://localhost:4200/` on your browser
 
 or, you can access at
 `http://sofco-test.kenangncode.com/`
@@ -26,14 +27,4 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
