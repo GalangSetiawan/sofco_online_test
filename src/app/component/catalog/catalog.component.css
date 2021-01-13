@@ -5,3 +5,26 @@
     width:30px;
     height: 30px;
 }
+
+@media only screen and (max-device-width: 480px) {
+    .cardItem{
+        padding: 3px !important;
+        zoom: 0.5;
+    }
+
+    .imgItem{
+        min-height: 300px !important;
+    }
+
+    
+}
+
+
+.imgItem{
+    min-height: 400px;
+    object-fit: cover
+}
+
+.cardItem{
+    padding: 5%;
+}
