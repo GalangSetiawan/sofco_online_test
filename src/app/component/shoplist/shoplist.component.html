@@ -1,42 +1,113 @@
-<div class="container">
-    <table class="uk-table uk-table-justify uk-table-divider">
-       
+<div class="container uk-animation-slide-right">
+    <table class="uk-table uk-table-justify uk-table-divider" style="width: 100%;">
         <tbody>
-            <tr>
-                <td>Table Data</td>
-                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</td>
-                <td width="150">
 
-                    <div class="quantity">
-                        <a class="plus-btn" type="button" name="button">
-                            <span uk-icon="plus"></span>
-                        </a>
-                        <input type="text" name="name" value="1">
-                        <a class="minus-btn" type="button" name="button">
-                            <span uk-icon="minus"></span>
-                        </a>
-                      </div>
 
+            <tr *ngFor="let data of dataCart">
+                <td class="icon">
+                    <a uk-tooltip="title: Hapus barang; pos: bottom" (click)="hapusBuku(data)">
+                        <i class="fa fa-close" aria-hidden="true" style="color:#90a4ae"></i>
+                    </a> &nbsp;
+                    <a uk-tooltip="title: Tambah ke wishlist; pos: bottom">
+                        <i class="fa fa-heart" aria-hidden="true" style="color:#e91e63" ></i>
+                    </a>
                 </td>
-                <td><button class="uk-button uk-button-default" type="button">Button</button></td>
+
+                <td class="image">
+                    <div class="uk-width-auto">
+                        <img class="uk-comment-avatar" src="{{data.picture}}" width="80" height="80" alt="">
+                    </div>
+                </td>
+                <td class="description"  >
+                    <span>{{data.title}}</span><br>
+                    <span>{{data.author}}</span>
+                </td>
+                <td class="quantity">
+
+                    <a class="plus-btn" uk-tooltip="title: Tambah Item; pos: bottom" type="button" name="button" (click)="editQty(data,'tambah')">
+                        <span uk-icon="plus"></span>
+                    </a>
+                    <input type="text" name="name" [(ngModel)]="data.qty" readonly>
+                    <a class="minus-btn"  uk-tooltip="title: Kurangi Item; pos: bottom" type="button" name="button" (click)="editQty(data,'kurang')">
+                        <span uk-icon="minus"></span>
+                    </a>
+                </td>
+                <td class="total-price">Rp{{data.price | number}}</td>
             </tr>
-            <tr>
-                <td>Table Data</td>
-                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</td>
-                <td></td>
-                <td><button class="uk-button uk-button-default" type="button">Button</button></td>
-            </tr>
+
+            
+
+
         </tbody>
+
+
     </table>
+
+
+    <table style="width: 100%;">
+        <tr style="line-height: 5px;">
+            <td class="description uk-text-bold"> Ringkasan belanja </td>
+            <td class="image"></td>
+            <td class="icon"></td>
+            <td class="quantity"></td>
+            <td class="total-price"></td>
+        </tr>
+
+        <tr style="line-height: 5px;">
+            <td class="description">Harga <span>( {{totalBuku}} buku)</span></td>
+            <td class="image"></td>
+            <td class="icon"></td>
+            <td class="quantity"></td>
+            <td class="total-price" *ngIf="dataCart.length > 0">Rp{{totalHarga | number}}</td>
+            <td class="total-price" *ngIf="dataCart.length == 0">Rp{{ 0 | number}}</td>
+        </tr>
+
+        <tr style="line-height: 5px;">
+            <td class="description">Diskon</td>
+            <td class="image"></td>
+            <td class="icon"></td>
+            <td class="quantity"></td>
+            <td class="total-price">Rp{{ 0 | number}}</td>
+        </tr>
+
+        <tr style="line-height: 5px;">
+            <td class="description">Ongkos Kirim</td>
+            <td class="image"></td>
+            <td class="icon"></td>
+            <td class="quantity"></td>
+            <td class="total-price">Rp{{ 0 | number}}</td>
+        </tr>
+
+        <tr style="line-height: 5px;">
+            <td class="description">Total Harga</td>
+            <td class="image"></td>
+            <td class="icon"></td>
+            <td class="quantity"></td>
+            <td class="total-price customColor font-weight-bold" *ngIf="dataCart.length > 0">Rp{{ totalHarga | number}}</td>
+            <td class="total-price customColor font-weight-bold" *ngIf="dataCart.length == 0">Rp{{ 0 | number}}</td>
+        </tr>
+
+
+    </table>
+
+  
+
+        
+       
+        
+   
 
     
 </div>
 
+<br><br>
 
-<div class="container-fluid">
+
+<div class="container-fluid mt-5">
     <div class="navbar fixed-bottom ">
 
-        <button class="uk-button uk-button-primary uk-width-1-1 uk-margin-small-bottom">Button</button>
+        <button uk-tooltip="title: hanya desain, tidak dengan fungsinya; pos: bottom" class="uk-button uk-button-primary uk-width-1-1 uk-margin-small-bottom roundedBorder-sx gsShadow" (click)="lanjutkan()" >Lanjutkan <span uk-icon="icon: cart"></span>
+        </button>
 
 
     </div>
