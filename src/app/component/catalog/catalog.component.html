@@ -1,184 +1,104 @@
-<div class="container-fluid">
-
-    <div uk-slider>
+<div class="container-fluid uk-animation-slide-right">
 
 
+    <div class="uk-search uk-search-large mb-5" style="zoom: 0.6;">
+        <span uk-search-icon></span>
+        <input class="uk-search-input" type="search" placeholder="Search..." [(ngModel)]="filterText" (input)="Search()">
+    </div>
 
-        <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider="center: true">
+
         
-            <ul class="uk-slider-items uk-grid">
-                <li class="uk-width-3-4">
-                    <div class="uk-panel">
-                        <img src="https://getuikit.com/docs/images/photo.jpg" alt="">
-                        <div class="uk-position-center uk-panel"><h1>1</h1></div>
-                    </div>
-                </li>
-                <li class="uk-width-3-4">
-                    <div class="uk-panel">
-                        <img src="https://getuikit.com/docs/images/dark.jpg" alt="">
-                        <div class="uk-position-center uk-panel"><h1>2</h1></div>
-                    </div>
-                </li>
-                <li class="uk-width-3-4">
-                    <div class="uk-panel">
-                        <img src="https://getuikit.com/docs/images/light.jpg" alt="">
-                        <div class="uk-position-center uk-panel"><h1>3</h1></div>
-                    </div>
-                </li>
-                <li class="uk-width-3-4">
-                    <div class="uk-panel">
-                        <img src="https://getuikit.com/docs/images/photo2.jpg" alt="">
-                        <div class="uk-position-center uk-panel"><h1>4</h1></div>
-                    </div>
-                </li>
-                <li class="uk-width-3-4">
-                    <div class="uk-panel">
-                        <img src="https://getuikit.com/docs/images/photo3.jpg" alt="">
-                        <div class="uk-position-center uk-panel"><h1>5</h1></div>
-                    </div>
-                </li>
-            </ul>
-        
-          
-        <!-- 
-            <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
-            <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a> -->
-        
-        </div>
+    <div uk-slider="center: true;autoplay: true;autoplay-interval: 10000">
 
-        <div class="d-flex justify-content-around mt-5 mb-3">
-            <div class="p-2">Sejarah</div>
-            <div class="p-2">Sosial</div>
-            <div class="p-2">Teknologi</div>
+        <ul class="uk-slider-items uk-grid">
+            
+            <li class="uk-width-3-4 uk-transition-toggle" tabindex="0">
+                <div class="uk-panel">
+                    <img src="https://getuikit.com/docs/images/light.jpg" alt="">
+                    
+                </div>
+            </li>
+            <li class="uk-width-3-4 uk-transition-toggle" tabindex="0">
+                <div class="uk-panel">
+                    <img src="https://getuikit.com/docs/images/photo2.jpg" alt="">
+                    
+                </div>
+            </li>
+            <li class="uk-width-3-4 uk-transition-toggle" tabindex="0">
+                <div class="uk-panel">
+                    <img src="https://getuikit.com/docs/images/photo3.jpg" alt="">
+                    
+                </div>
+            </li>
+        </ul>
+
+        <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin"></ul>
+
+    </div>
+
+
+
+        <div class="d-flex justify-content-around mt-3 mb-3 uk-text-uppercase">
+            <a class="p-2" uk-tooltip="title: hanya desain, tidak dengan fungsinya; pos: bottom">Sejarah</a>
+            <a class="p-2" uk-tooltip="title: hanya desain, tidak dengan fungsinya; pos: bottom">Sosial</a>
+            <a class="p-2" uk-tooltip="title: hanya desain, tidak dengan fungsinya; pos: bottom">Teknologi</a>
         </div>
 
 
-
+        
                    
 
-        <div class="container">
-            <div class="uk-child-width-1-3@m" uk-grid>
-                <div>
+        <div class="container cardItem">
+            <div class="uk-grid-large uk-child-width-1-3" uk-grid uk-height-match="target: > div > .uk-card">
+                <div *ngFor="let data of currentPageItem; let idx = index">
                     <div class="uk-card uk-card-default">
-                        <div class="uk-card-media-top" style="margin-bottom:-10px;" >
-                            <img src="https://getuikit.com/docs/images/photo2.jpg" style="min-height: 400px;object-fit: cover" alt="">
+
+                        <div class="uk-inline-clip uk-transition-toggle" (click)="modalDetailItem(data,idx)">
+                            <img src={{data.picture}} class="imgItem" alt="">
+                            <div class="uk-transition-slide-bottom uk-position-bottom uk-overlay uk-overlay-default">
+                                <div class="uk-margin d-flex justify-content-center">
+                                    <span>Stok Tersedia </span> &nbsp; <span>[ {{data.stock}} ]</span>
+                                </div>
+
+                            </div>
                         </div>
+
+                        
                         <div class="uk-card-body uk-padding-small">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
-                            <p style="margin-bottom:-1px"><span class="uk-text-bold">Rp.</span> 50.000,-</p>
-    
-                            <span uk-icon="icon: star" class="uk-text-warning"></span>
-                            <span uk-icon="icon: star" class="uk-text-warning"></span>
-                            <span uk-icon="icon: star" class="uk-text-warning"></span>
-                            <span uk-icon="icon: star" class="uk-text-warning"></span>
-                            <span uk-icon="icon: star"></span>
-                            <span class="uk-text-muted ">  (100)</span>
-    
-                        </div>
-                    </div>
-                </div>
-    
-                <div>
-                    <div class="uk-card uk-card-default">
-                        <div class="uk-card-media-top" style="margin-bottom:-10px;" >
-                            <img src="https://getuikit.com/docs/images/photo2.jpg" style="min-height: 400px;object-fit: cover" alt="">
-                        </div>
-                        <div class="uk-card-body uk-padding-small">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
-                            <p style="margin-bottom:-1px"><span class="uk-text-bold">Rp.</span> 50.000,-</p>
-    
-                            <span uk-icon="icon: star" class="uk-text-warning"></span>
-                            <span uk-icon="icon: star" class="uk-text-warning"></span>
-                            <span uk-icon="icon: star" class="uk-text-warning"></span>
-                            <span uk-icon="icon: star" class="uk-text-warning"></span>
-                            <span uk-icon="icon: star"></span>
-                            <span class="uk-text-muted ">  (100)</span>
+
+                            <div class="d-flex justify-content-center mt-4" style="margin-bottom: -5px;">
+                                <span class="uk-text-bold">{{data.title}}</span>
+                            </div>
+
+                            <div class="d-flex justify-content-center" style="margin-bottom: -10px;">
+                                <span class="uk-text-italic">{{data.author}}</span>
+                            </div>
+
+                            <div class="uk-margin d-flex justify-content-center">
+                                <p style="margin-bottom:-1px"><span class="uk-text-bold">Rp. </span>{{ data.price | number }},-</p>
+                            </div>
+
+                            <div class="d-flex justify-content-center" style="margin-top: -20px;" uk-tooltip="title: hanya desain, tidak dengan fungsinya; pos: bottom">    
+                                <div>
+                                    <span uk-icon="icon: star" class="uk-text-warning"></span>
+                                    <span uk-icon="icon: star" class="uk-text-warning"></span>
+                                    <span uk-icon="icon: star" class="uk-text-warning"></span>
+                                    <span uk-icon="icon: star" class="uk-text-warning"></span>
+                                    <span uk-icon="icon: star"></span>
+                                    <span class="uk-text-muted ">  (100)</span>
+                                </div>
+                            </div>
+                            
+                           
+
+                            <div class="uk-margin d-flex justify-content-center">
+                                <button class="uk-button uk-button-primary  roundedBorder-sx gsShadow" (click)="addToCart(data)" [disabled]="data.isDisable">Add to Cart</button>
+                            </div>
     
                         </div>
                     </div>
                 </div>
 
-                <div>
-                    <div class="uk-card uk-card-default">
-                        <div class="uk-card-media-top" style="margin-bottom:-10px;" >
-                            <img src="https://getuikit.com/docs/images/photo2.jpg" style="min-height: 400px;object-fit: cover" alt="">
-                        </div>
-                        <div class="uk-card-body uk-padding-small">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
-                            <p style="margin-bottom:-1px"><span class="uk-text-bold">Rp.</span> 50.000,-</p>
-    
-                            <span uk-icon="icon: star" class="uk-text-warning"></span>
-                            <span uk-icon="icon: star" class="uk-text-warning"></span>
-                            <span uk-icon="icon: star" class="uk-text-warning"></span>
-                            <span uk-icon="icon: star" class="uk-text-warning"></span>
-                            <span uk-icon="icon: star"></span>
-                            <span class="uk-text-muted ">  (100)</span>
-    
-                        </div>
-                    </div>
-                </div>
-
-                <div>
-                    <div class="uk-card uk-card-default">
-                        <div class="uk-card-media-top" style="margin-bottom:-10px;" >
-                            <img src="https://getuikit.com/docs/images/photo2.jpg" style="min-height: 400px;object-fit: cover" alt="">
-                        </div>
-                        <div class="uk-card-body uk-padding-small">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
-                            <p style="margin-bottom:-1px"><span class="uk-text-bold">Rp.</span> 50.000,-</p>
-    
-                            <span uk-icon="icon: star" class="uk-text-warning"></span>
-                            <span uk-icon="icon: star" class="uk-text-warning"></span>
-                            <span uk-icon="icon: star" class="uk-text-warning"></span>
-                            <span uk-icon="icon: star" class="uk-text-warning"></span>
-                            <span uk-icon="icon: star"></span>
-                            <span class="uk-text-muted ">  (100)</span>
-    
-                        </div>
-                    </div>
-                </div>
-
-                <div>
-                    <div class="uk-card uk-card-default">
-                        <div class="uk-card-media-top" style="margin-bottom:-10px;" >
-                            <img src="https://getuikit.com/docs/images/photo2.jpg" style="min-height: 400px;object-fit: cover" alt="">
-                        </div>
-                        <div class="uk-card-body uk-padding-small">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
-                            <p style="margin-bottom:-1px"><span class="uk-text-bold">Rp.</span> 50.000,-</p>
-    
-                            <span uk-icon="icon: star" class="uk-text-warning"></span>
-                            <span uk-icon="icon: star" class="uk-text-warning"></span>
-                            <span uk-icon="icon: star" class="uk-text-warning"></span>
-                            <span uk-icon="icon: star" class="uk-text-warning"></span>
-                            <span uk-icon="icon: star"></span>
-                            <span class="uk-text-muted ">  (100)</span>
-    
-                        </div>
-                    </div>
-                </div>
-
-                <div>
-                    <div class="uk-card uk-card-default">
-                        <div class="uk-card-media-top" style="margin-bottom:-10px;" >
-                            <img src="https://getuikit.com/docs/images/photo2.jpg" style="min-height: 400px;object-fit: cover" alt="">
-                        </div>
-                        <div class="uk-card-body uk-padding-small">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
-                            <p style="margin-bottom:-1px"><span class="uk-text-bold">Rp.</span> 50.000,-</p>
-    
-                            <span uk-icon="icon: star" class="uk-text-warning"></span>
-                            <span uk-icon="icon: star" class="uk-text-warning"></span>
-                            <span uk-icon="icon: star" class="uk-text-warning"></span>
-                            <span uk-icon="icon: star" class="uk-text-warning"></span>
-                            <span uk-icon="icon: star"></span>
-                            <span class="uk-text-muted ">  (100)</span>
-    
-                        </div>
-                    </div>
-                </div>
-    
-                
             </div>
         </div>
 
@@ -188,17 +108,74 @@
 
 
 
-        <div class="container">
+        <div class="container" id="pagination">
             <div class="d-flex justify-content-between mt-5">
-                <div class="p-2 text-warning">Prev</div>
-                <div class="p-2">2</div>
-                <div class="p-2 text-warning">Next</div>
+                <div class="p-2"><a id="prevBtn" class="uk-slidenav-large" uk-slidenav-previous (click)="prevPage()"></a></div>
+                <div class="p-2">{{currentPage}}</div>
+                <div class="p-2"><a id="nextBtn" class="uk-slidenav-large" uk-slidenav-next (click)="nextPage()"></a></div>
+            </div>
+        </div>
+
+        
+
+</div>
+
+
+
+
+
+<!-- ===============Modal Detaill Item==================== -->
+<div id="detailView" uk-modal>
+    <div class="uk-modal-dialog uk-margin-auto-vertical uk-modal-body">
+
+        <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
+            <div class="uk-card-media-left uk-cover-container">
+                <img src="{{detailBook.picture}}" alt="" uk-cover>
+                <canvas width="600" height="400"></canvas>
+            </div>
+            <div>
+                <div class="uk-card-body">
+                    <h3 class="uk-card-title">{{detailBook.title}}</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+
+                    <div class="d-flex justify-content-center" style="margin-bottom: -10px;">
+                        <span class="uk-text-italic">{{detailBook.author}}</span>
+                    </div>
+
+                    <div class="uk-margin d-flex justify-content-center" style="margin-bottom:-20px">
+                        <span>Stok Tersedia </span> &nbsp; <span>[ {{detailBook.stock}} ]</span>
+                    </div>
+
+                    <div class="uk-margin d-flex justify-content-center">
+                        <p style="margin-bottom:-1px"><span class="uk-text-bold">Rp. </span>{{ detailBook.price | number }},-</p>
+                    </div>
+
+                    <div class="d-flex justify-content-center" style="margin-top: -20px;" uk-tooltip="title: hanya desain, tidak dengan fungsinya; pos: bottom">    
+                        <div>
+                            <span uk-icon="icon: star" class="uk-text-warning"></span>
+                            <span uk-icon="icon: star" class="uk-text-warning"></span>
+                            <span uk-icon="icon: star" class="uk-text-warning"></span>
+                            <span uk-icon="icon: star" class="uk-text-warning"></span>
+                            <span uk-icon="icon: star"></span>
+                            <span class="uk-text-muted "> (100)</span>
+                        </div>
+                    </div>
+
+
+                </div>
             </div>
         </div>
 
 
-        
-          
-          
+        <p class="uk-text-right">
+            <button class="uk-button uk-button-default uk-modal-close roundedBorder-sx gsShadow" type="button">Cancel</button> &nbsp;
+            <button class="uk-button uk-button-primary roundedBorder-sx gsShadow" [disabled]="detailBook.isDisable" (click)="addToCart(detailBook)" type="button">Add to Cart</button>
+        </p>
 
+
+        <!-- <p class="uk-text-right">
+            <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+            <button class="uk-button uk-button-primary" type="button">Save</button>
+        </p> -->
+    </div>
 </div>
