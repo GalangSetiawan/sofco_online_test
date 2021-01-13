@@ -1,0 +1,14 @@
+@media only screen and (max-device-width: 480px) {
+    .barJudul,
+    .bodyDetail{
+        zoom: 0.5 !important ;
+    }
+
+    .uk-comment-list{
+        zoom: 0.6 !important ;
+    }
+    
+    
+}
+
+
