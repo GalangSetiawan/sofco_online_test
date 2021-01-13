@@ -1,67 +1,74 @@
-<div class="container-fluid">
 
-    <div uk-slider>
+<nav class="uk-navbar-container uk-margin uk-animation-slide-right" uk-navbar id="welcomeBoard" >
 
-
-
-        <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider="center: true">
-        
-            <ul class="uk-slider-items uk-grid">
-                <li class="uk-width-3-4">
-                    <div class="uk-panel">
-                        <img src="https://getuikit.com/docs/images/photo.jpg" alt="">
-                        <div class="uk-position-center uk-panel"><h1>1</h1></div>
-                    </div>
-                </li>
-                <li class="uk-width-3-4">
-                    <div class="uk-panel">
-                        <img src="https://getuikit.com/docs/images/dark.jpg" alt="">
-                        <div class="uk-position-center uk-panel"><h1>2</h1></div>
-                    </div>
-                </li>
-                <li class="uk-width-3-4">
-                    <div class="uk-panel">
-                        <img src="https://getuikit.com/docs/images/light.jpg" alt="">
-                        <div class="uk-position-center uk-panel"><h1>3</h1></div>
-                    </div>
-                </li>
-                <li class="uk-width-3-4">
-                    <div class="uk-panel">
-                        <img src="https://getuikit.com/docs/images/photo2.jpg" alt="">
-                        <div class="uk-position-center uk-panel"><h1>4</h1></div>
-                    </div>
-                </li>
-                <li class="uk-width-3-4">
-                    <div class="uk-panel">
-                        <img src="https://getuikit.com/docs/images/photo3.jpg" alt="">
-                        <div class="uk-position-center uk-panel"><h1>5</h1></div>
-                    </div>
-                </li>
+    <!-- <div class="uk-navbar-left">
+      <ul class="uk-navbar-nav">
+          <li><a href="#">Parent</a></li>
+      </ul>
+    </div> -->
+  
+  
+    <div class="uk-navbar-center">
+        <div class="uk-navbar-center-left">
+            <ul class="uk-navbar-nav">
+                <li><a style="color: #A3A3A3; cursor:text;">Welcome to my</a></li>
             </ul>
-        
-          
-        <!-- 
-            <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
-            <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a> -->
-        
         </div>
-
-        <div class="d-flex justify-content-around mt-3">
-            <div class="p-2">Sejarah</div>
-            <div class="p-2">Sosial</div>
-            <div class="p-2">Teknologi</div>
+  
+        <a class="uk-navbar-item uk-logo oleoFont storeNameHeading" skipLocationChange [routerLink]="['/']">Book Store <span >.</span></a>
+  
+        <div class="uk-navbar-center-right">
+            <ul class="uk-navbar-nav">
+                <li><a style="color: #A3A3A3; cursor:text;">Enjoy Shopping</a></li>
+            </ul>
         </div>
-
-
-        <div class="d-flex justify-content-between">
-            <div class="p-2 text-warning">Prev</div>
-            <div class="p-2">2</div>
-            <div class="p-2 text-warning">Next</div>
-        </div>
-
-
         
-          
-          
+    </div>
+  
+    <!-- <div class="uk-navbar-right">
+      <ul class="uk-navbar-nav">
+        <li><a href="#">Parent</a></li>
+      </ul>
+    </div> -->
+  
+  
+  </nav>
+
+
+
+
+<div uk-slider="center: true;autoplay: true;autoplay-interval: 10000" class="uk-animation-slide-right">
+
+    <ul class="uk-slider-items uk-grid">
+        
+        <li class="uk-width-3-4 uk-transition-toggle" tabindex="0">
+            <div class="uk-panel">
+                <img src="https://getuikit.com/docs/images/light.jpg" alt="">
+                
+            </div>
+        </li>
+        <li class="uk-width-3-4 uk-transition-toggle" tabindex="0">
+            <div class="uk-panel">
+                <img src="https://getuikit.com/docs/images/photo2.jpg" alt="">
+                
+            </div>
+        </li>
+        <li class="uk-width-3-4 uk-transition-toggle" tabindex="0">
+            <div class="uk-panel">
+                <img src="https://getuikit.com/docs/images/photo3.jpg" alt="">
+                
+            </div>
+        </li>
+    </ul>
+
+    <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin"></ul>
 
 </div>
+
+<div class="uk-margin d-flex justify-content-center">
+    <div class="uk-margin">
+        <button class="uk-button uk-button-primary uk-button-large" skipLocationChange [routerLink]="['/catalog']"> Go to Catalog <span uk-icon="icon: tag"></span> </button>
+    </div>
+</div>
+
+
