@@ -1,6 +1,7 @@
 .quantity {
     padding-top: 20px;
     margin-right: 60px;
+    width: 10%;
 }
 .quantity input {
     -webkit-appearance: none;
@@ -37,3 +38,87 @@
     border: none;
     cursor: pointer;
 }
+
+
+.showMobile{
+    display: none;
+}
+@media only screen and (max-device-width: 480px) {
+   
+
+    .showMobile{
+        display: block;
+    }
+
+    table{
+        zoom: 0.6;
+    }
+
+    .image{
+        display: none;
+    }
+
+
+    .minus-btn,
+    .plus-btn{
+        zoom: 0.6;
+    }
+
+
+
+    .description{
+        width: 45%;
+    }
+
+    .icon{
+        width: 20% !important;
+    }
+    
+}
+
+
+.icon{
+    padding-top: 25px;
+    width: 10%;
+}
+
+
+
+.image {
+    margin-top: 30px;
+    width: 10%;
+    text-align: left;
+    margin: 6px 0;
+}
+
+.total-price {
+    padding-top: 25px;
+    text-align: center;
+    font-size: 16px;
+    color: #43484D;
+    font-weight: 300;
+}
+
+
+.description {
+    width: 50%;
+    padding-top: 10px;
+    margin-right: 60px;
+}
+
+.description span {
+    font-size: 14px;
+    color: #43484D;
+    font-weight: 400;
+}
+
+ 
+.description span:first-child {
+    margin-bottom: 5px;
+  }
+  .description span:last-child {
+    font-weight: 300;
+    margin-top: 8px;
+    color: #86939E;
+  }
+
