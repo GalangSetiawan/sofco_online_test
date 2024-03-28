@@ -1,4 +1,6 @@
 # Sofcotest
+Demo : https://galangsetiawan.github.io/sofco_online_test/
+
 
 aplikasi ini ditujukan untuk menyelesaikan online test yang di berikan oleh PT. Sofco Graha pada tahapan seleksi masuk ke perusahaan
 
